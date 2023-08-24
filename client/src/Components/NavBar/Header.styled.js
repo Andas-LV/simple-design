@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   background-color: white;
   height: 120px;
   position: sticky;
+  z-index:10;
   @media (min-width: 1279px) {
 
   }
