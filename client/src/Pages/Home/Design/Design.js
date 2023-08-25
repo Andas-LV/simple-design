@@ -16,15 +16,7 @@ import {
   ItemButton,
 } from "../Design/Design.styled";
 import bag from "../../../Assets/img-mainpage/bag.svg";
-import img1 from "../../../Assets/img-mainpage/living-room-1.svg";
-import img2 from "../../../Assets/img-mainpage/living-room-2.svg";
-import img3 from "../../../Assets/img-mainpage/living-room-3.svg";
-import img4 from "../../../Assets/img-mainpage/children-1.svg";
-import img5 from "../../../Assets/img-mainpage/children-3.svg";
-import img6 from "../../../Assets/img-mainpage/children-3.svg";
-import img7 from "../../../Assets/img-mainpage/corridors-1.svg";
-import img8 from "../../../Assets/img-mainpage/corridors-2.svg";
-import img9 from "../../../Assets/img-mainpage/corridors-3.svg";
+import { livingRooms, childrenRooms, corridors } from "./rooms.data";
 
 export default function Design() {
   return (
@@ -41,44 +33,20 @@ export default function Design() {
           <Line></Line>
         </BlockName>
         <ItemWrapper>
-          <Item>
-            <img src={img1} alt="img" />
-            <SubItem>
-              <H4>Акварель</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img2} alt="img" />
-            <SubItem>
-              <H4>Ира</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img3} alt="img" />
-            <SubItem>
-              <H4>Нурс</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
+          {livingRooms.map((room) => (
+            <Item key={room.id}>
+              <img src={room.image} alt="img" />
+              <SubItem>
+                <H4>{room.name}</H4>
+                <Link to="/designs">
+                  <ItemButton>
+                    <img src={bag} alt="img" />
+                    Выбрать
+                  </ItemButton>
+                </Link>
+              </SubItem>
+            </Item>
+          ))}
         </ItemWrapper>
       </Block>
 
@@ -88,44 +56,20 @@ export default function Design() {
           <Line></Line>
         </BlockName>
         <ItemWrapper>
-          <Item>
-            <img src={img4} alt="img" />
-            <SubItem>
-              <H4>Синяя</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img5} alt="img" />
-            <SubItem>
-              <H4>Розовая</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img6} alt="img" />
-            <SubItem>
-              <H4>Яркая</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
+        {childrenRooms.map((room) => (
+            <Item key={room.id}>
+              <img src={room.image} alt="img" />
+              <SubItem>
+                <H4>{room.name}</H4>
+                <Link to="/designs">
+                  <ItemButton>
+                    <img src={bag} alt="img" />
+                    Выбрать
+                  </ItemButton>
+                </Link>
+              </SubItem>
+            </Item>
+          ))}
         </ItemWrapper>
       </Block>
 
@@ -135,44 +79,20 @@ export default function Design() {
           <Line></Line>
         </BlockName>
         <ItemWrapper>
-          <Item>
-            <img src={img7} alt="img" />
-            <SubItem>
-              <H4>Ирина</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img8} alt="img" />
-            <SubItem>
-              <H4>Акварель</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
-
-          <Item>
-            <img src={img9} alt="img" />
-            <SubItem>
-              <H4>Кадыр</H4>
-              <Link to="/designs">
-                <ItemButton>
-                  <img src={bag} alt="img" />
-                  Выбрать
-                </ItemButton>
-              </Link>
-            </SubItem>
-          </Item>
+          {corridors.map((room) => (
+            <Item key={room.id}>
+              <img src={room.image} alt="img" />
+              <SubItem>
+                <H4>{room.name}</H4>
+                <Link to="/designs">
+                  <ItemButton>
+                    <img src={bag} alt="img" />
+                    Выбрать
+                  </ItemButton>
+                </Link>
+              </SubItem>
+            </Item>
+          ))}
         </ItemWrapper>
       </Block>
 
