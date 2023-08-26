@@ -9,7 +9,7 @@ const start = async() => {
   try{
     await mongoose.connect(config.get("dbURL"));
     app.listen(PORT, () => {
-        console.log("server works at", PORT);
+      console.log("server works at", PORT);
     });
   }catch(e){
 
