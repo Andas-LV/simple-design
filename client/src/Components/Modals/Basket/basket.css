@@ -9,23 +9,59 @@
   top: 0;
   left: 0;
   z-index: 10;
-  transition:0.4s all;
+  transition: 0.4s all;
   opacity: 0;
   pointer-events: none;
 }
 .busket.active {
-  opacity:1;
+  opacity: 1;
   pointer-events: all;
 }
-.busket-content {
+.busket-wrapper {
   color: black;
   background: white;
-  border-radius: 10px;
-  height: 70vh;
-  width: 30vw;
+  width: 80vw;
 }
-.busket-content p{
-  color: black;
+.busket-wrapper p {
   font-weight: 400;
   font-size: 20px;
+}
+.closer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 35px 35px 0 0;
+  gap: 10px;
+}
+.closer p {
+  color: rgba(40, 40, 40, 0.7);
+  font-size: 20px;
+  font-weight: 500;
+}
+.close {
+  cursor: pointer;
+}
+.busket-content {
+  display: flex;
+  justify-content: space-around;
+}
+.bill-list {
+}
+.bill-list-items {
+}
+.bill-list-item {
+  display: flex;
+  align-items:center;
+  gap: 30px;
+}
+.bill-list-item p {
+}
+.bill-list-item ul {
+}
+.bill-list-item ul li {
+}
+
+.checkBox {
+}
+.bill-name {
 }

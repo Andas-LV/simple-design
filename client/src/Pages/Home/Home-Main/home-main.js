@@ -20,9 +20,7 @@ export default function HomeMain() {
           Моя корзина
           <img src={bag} alt="img" className="bag" />
         </span>
-        <Basket active={modalActive} setActive={setModalActive}>
-          <p>Моя корзина</p>
-        </Basket>
+        <Basket active={modalActive} setActive={setModalActive}/>
         {/* MODAL END*/}
         <h1>
           Дизайн-проект для вашей квартиры <br /> за 2 недели и 199 000 ₸
