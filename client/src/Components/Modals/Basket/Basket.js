@@ -35,9 +35,27 @@ const Basket = ({ active, setActive }) => {
                 <p>99 000 тг</p>
               </div>
 
-              <div className="bill-list-item"></div>
+              <div className="bill-list-item">
+                <img src={checkBox} alt="img" className="checkBox" />
+                <div className="bill-name">
+                  <h3>Дизайн-проект</h3>
+                  <ul>
+                    <li>2 варианта планировки + финальный</li>
+                    <li> планы демонтажа и монтажа стен</li>
+                    <li>розетки, выключатели, освещение</li>
+                    <li>сантехника</li>
+                    <li>план потолка</li>
+                    <li>план пола и плинтусов</li>
+                    <li>план дверей</li>
+                  </ul>
+                </div>
+                <p>199 000 тг</p>
+              </div>
             </div>
-            <div className="bill-list-extraServise"></div>
+            <div className="bill-list-extraServise">
+              <h1>Дополнительные услуги</h1>
+              
+            </div>
           </div>
           <div className="bill"></div>
         </div>

@@ -20,17 +20,26 @@
 .busket-wrapper {
   color: black;
   background: white;
-  width: 80vw;
+  width: 90vw;
+  padding: 0 90px;
 }
 .busket-wrapper p {
   font-weight: 400;
   font-size: 20px;
 }
+.busket-wrapper h1 {
+  display: flex;
+  justify-content: flex-start;
+  color: black !important;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
 .closer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 35px 35px 0 0;
+  margin-top: 30px;
   gap: 10px;
 }
 .closer p {
@@ -43,25 +52,52 @@
 }
 .busket-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(90vw / 2);
 }
 .bill-list {
 }
 .bill-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 .bill-list-item {
   display: flex;
-  align-items:center;
+  align-items: flex-start;
   gap: 30px;
 }
+.bill-list-item h3 {
+  color: #bd7048;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+  font-weight: 500;
+}
 .bill-list-item p {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+}
+.bill-list-item li {
+  color: rgba(38, 38, 38, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
 }
 .bill-list-item ul {
-}
-.bill-list-item ul li {
+  display: flex;
+  flex-direction:column;
+  gap: 5px;
 }
 
 .checkBox {
 }
 .bill-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
