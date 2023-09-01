@@ -1,7 +1,7 @@
 import React from "react";
 import "./basket.css";
 import close from "../../../Assets/img-mainpage/close.svg";
-import checkBox from "../../../Assets/img-mainpage/checkBox.svg";
+import ToggleCheckBox from "./toggleCheckBox";
 
 const Basket = ({ active, setActive }) => {
   return (
@@ -23,7 +23,7 @@ const Basket = ({ active, setActive }) => {
           <div className="bill-list">
             <div className="bill-list-items">
               <div className="bill-list-item">
-                <img src={checkBox} alt="img" className="checkBox" />
+                <ToggleCheckBox />
                 <div className="bill-name">
                   <h3>Планировка</h3>
                   <ul>
@@ -36,7 +36,7 @@ const Basket = ({ active, setActive }) => {
               </div>
 
               <div className="bill-list-item">
-                <img src={checkBox} alt="img" className="checkBox" />
+                <ToggleCheckBox />
                 <div className="bill-name">
                   <h3>Дизайн-проект</h3>
                   <ul>
@@ -54,7 +54,29 @@ const Basket = ({ active, setActive }) => {
             </div>
             <div className="bill-list-extraServise">
               <h1>Дополнительные услуги</h1>
-              
+              <div className="eS-block">
+                <ToggleCheckBox />
+                <div className="eS-block-text">
+                  <p>Тендер строительных бригад</p>
+                  <p>+ 49 000 тг</p>
+                </div>
+              </div>
+
+              <div className="eS-block">
+                <ToggleCheckBox />
+                <div className="eS-block-text">
+                  <p>Составление сметы</p>
+                  <p>+ 49 000 тг</p>
+                </div>
+              </div>
+
+              <div className="eS-block">
+                <ToggleCheckBox />
+                <div className="eS-block-text">
+                  <p>Печать альбома</p>
+                  <p>+ 19 000 тг</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="bill"></div>
