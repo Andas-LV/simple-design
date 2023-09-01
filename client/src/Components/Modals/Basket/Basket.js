@@ -33,7 +33,7 @@ const Basket = ({ active, setActive }) => {
                     <li>план монтажа перегородок</li>
                   </ul>
                 </div>
-                <p>99 000 тг</p>
+                <number>99 000 тг</number>
               </div>
 
               <div className="bill-list-item">
@@ -50,7 +50,7 @@ const Basket = ({ active, setActive }) => {
                     <li>план дверей</li>
                   </ul>
                 </div>
-                <p>199 000 тг</p>
+                <number>199 000 тг</number>
               </div>
             </div>
             <div className="bill-list-extraServise">
@@ -59,7 +59,7 @@ const Basket = ({ active, setActive }) => {
                 <ToggleCheckBox />
                 <div className="eS-block-text">
                   <p>Тендер строительных бригад</p>
-                  <p>+ 49 000 тг</p>
+                  <number>+ 49 000 тг</number>
                 </div>
               </div>
 
@@ -67,7 +67,7 @@ const Basket = ({ active, setActive }) => {
                 <ToggleCheckBox />
                 <div className="eS-block-text">
                   <p>Составление сметы</p>
-                  <p>+ 49 000 тг</p>
+                  <number>+ 49 000 тг</number>
                 </div>
               </div>
 
