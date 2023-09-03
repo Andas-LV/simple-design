@@ -1,26 +1,67 @@
-import express from "express";
-import mongoose from "mongoose";
-import {get} from "config";
-// import authRouter from "./routes/auth.routes";
+import express, { json } from "express";
+import { connect, model } from "mongoose";
+import { hash, compare } from "bcrypt";
+import sv from "jsonwebtoken";
+import cors from "cors";
+const { sign, verify } = sv; 
 
 const app = express();
-const PORT = get("serverPort");
+app.use(json());
+app.use(cors());
 
-// app.use("/api/auth", authRouter)
-
-const start = async () => {
-  try {
-    await mongoose.connect(config.get("dbUrl"), {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    app.listen(PORT, () => {
-      console.log("Server started on port ", PORT);
-    });
-  } catch (e) {
-    console.log(e);
+connect(
+  "mongodb+srv://andassatybaldy:AOCLLnUWAuZ9oeU3@cluster0.whktpxa.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   }
-};
+);
 
-start();
+const User = model("User", {
+  username: String,
+  passwordHash: String,
+});
+
+const secret = "mySuperSecretKey123";
+
+// Registration
+app.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+  const passwordHash = await hash(password, 10);
+  const user = new User({ username, passwordHash });
+  await user.save();
+  res.status(201).json({ message: "User registered successfully" });
+});
+
+// Login
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await User.findOne({ username });
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+  if (await compare(password, user.passwordHash)) {
+    const token = sign({ username }, secret);
+    return res.json({ token });
+  } else {
+    return console.log("fuck out");;
+    // return res.status(401).json({ message: "Authentication failed" });
+  }
+});
+
+// Protected Route
+app.get("/protected", (req, res) => {
+  const token = req.headers.authorization.split(" ")[1];
+  try {
+    const payload = verify(token, secret);
+    res.json({
+      message: `Hello, ${payload.username}! This is a protected route.`,
+    });
+  } catch (error) {
+    res.status(401).json({ message: "Authentication failed" });
+  }
+});
+
+app.listen(5000, () => {
+  console.log("Server is running on port 5000");
+});

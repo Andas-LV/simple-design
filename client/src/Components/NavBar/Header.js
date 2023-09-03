@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 import Login from "../Modals/Login/Login";
 import Regist from "../Modals/Registration/Regist";
+import Protected from "../Modals/Protected";
 import Routing from "./Router";
+
 import {
   Wrapper,
   Account,
@@ -39,7 +41,13 @@ const Header = () => {
 
   const [loginActive, setLoginActive] = useState(false);
   const [modalActive, setModalActive] = useState(false);
+// BACK
+  const [token, setToken] = useState("");
 
+  const handleLogin = (newToken) => {
+    setToken(newToken);
+  };
+// BACK END
   return (
     <>
       <Wrapper>
@@ -80,7 +88,8 @@ const Header = () => {
                 onClick={() => setLoginActive(true)}>
                 Войти
               </span>
-              <Login active={loginActive} setActive={setLoginActive} />
+              <Login active={loginActive} setActive={setLoginActive} onLogin={handleLogin}/>
+              {token && <Protected token={token} />}
               {/* MODAL END*/}
               <AccountLine></AccountLine>
               {/* MODAL START*/}
