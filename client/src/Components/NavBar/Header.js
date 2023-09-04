@@ -19,6 +19,12 @@ import logo from "../../Assets/img-mainpage/logo.svg";
 import phone from "../../Assets/img-mainpage/phone.svg";
 
 const Header = () => {
+
+  const [openDropDown, setOpenDropdown] = useState(false);
+  const [loginActive, setLoginActive] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
+  const [token, setToken] = useState("");
+
   const DropDown = () => {
     return (
       <NavDropdown>
@@ -33,21 +39,14 @@ const Header = () => {
     );
   };
 
-  const [openDropDown, setOpenDropdown] = useState(false);
-
   const toggleDropdown = () => {
     setOpenDropdown(!openDropDown);
   };
 
-  const [loginActive, setLoginActive] = useState(false);
-  const [modalActive, setModalActive] = useState(false);
-// BACK
-  const [token, setToken] = useState("");
-
   const handleLogin = (newToken) => {
     setToken(newToken);
   };
-// BACK END
+
   return (
     <>
       <Wrapper>

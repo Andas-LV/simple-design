@@ -15,9 +15,10 @@ const Regist = ({ active, setActive }) => {
       });
       console.log("Registration successful");
     } catch (error) {
-      console.error("fuck out");
+      console.log("fuck out");
     }
   };
+
   return (
     <div
       className={active ? "regist active" : "regist"}
@@ -25,7 +26,7 @@ const Regist = ({ active, setActive }) => {
       <div className="regist-content" onClick={(e) => e.stopPropagation()}>
         {/* FORM START */}
         <form className="form" onSubmit={handleSubmit}>
-          <p className="form-title">Sign in to your account</p>
+          <p className="form-title">Sign up</p>
           <div className="input-container">
             <input
               type="text"
@@ -44,16 +45,12 @@ const Regist = ({ active, setActive }) => {
             />
           </div>
           <button type="submit" className="submit">
-            Sign in
+            Sign up
           </button>
 
-          <p className="signup-link">
-            No account?
-            <a href="/">Sign up</a>
-          </p>
+          
         </form>
         {/* FORM END */}
-        REGISTRATION
       </div>
     </div>
   );
