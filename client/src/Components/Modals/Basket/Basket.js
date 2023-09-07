@@ -11,7 +11,6 @@ const Basket = ({ active, setActive }) => {
       onClick={() => setActive(true)}>
       <div className="busket-wrapper" onClick={(e) => e.stopPropagation()}>
         <div className="closer">
-          <p>Закрыть</p>
           <img
             src={close}
             alt="img"
@@ -120,7 +119,7 @@ const Basket = ({ active, setActive }) => {
                 <button className="basket-request-btn">Оставить заявку</button>
               </Link>
               <Link to="/">
-                <button className="pay-btn">Оставить заявку</button>
+                <button className="pay-btn">Оплатить 367 000 тг</button>
               </Link>
               <Link to="/">
                 <button className="kaspi-pay-btn">
@@ -137,7 +136,7 @@ const Basket = ({ active, setActive }) => {
                       fill="white"
                     />
                   </svg>
-                  Оставить заявку
+                  Оплатить в рассрочку
                 </button>
               </Link>
             </div>

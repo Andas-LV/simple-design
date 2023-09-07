@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Footer from "../../Components/Footer/Footer";
+import {Wrapper, H1, Logo, DesignBlock} from "./About.styled"
 
 const About = () => {
   return (
-    <div>About</div>
+    <Wrapper>
+
+      <Footer/>
+    </Wrapper>
   )
 }
 export default About
