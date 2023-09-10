@@ -7,7 +7,7 @@ import About from "../../Pages/About/About";
 import Prices from "../../Pages/Prices/Prices";
 import Contact from "../../Pages/Contact/Contact";
 import Request from "../../Pages/Request/Request";
-import Privacy from "../../Pages/Privacy/Privacy";
+import Privacy from "../Footer/Privacy/Privacy";
 import Designs from "../../Pages/Designs/Designs";
 
 const Routing = () => {

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: white;
+  box-shadow: 0px 4px 37px 0px rgba(0, 0, 0, 0.05);
   height: 120px;
   position: sticky;
   z-index:10;
