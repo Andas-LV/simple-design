@@ -1,8 +1,8 @@
 import express, { json } from "express";
 import { connect, model } from "mongoose";
 import { hash, compare } from "bcrypt";
-import sv from "jsonwebtoken";
 import cors from "cors";
+import sv from "jsonwebtoken";
 const { sign, verify } = sv; 
 
 const app = express();
