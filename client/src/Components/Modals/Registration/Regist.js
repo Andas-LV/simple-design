@@ -15,7 +15,7 @@ const Regist = ({ active, setActive }) => {
       });
       console.log("Registration successful");
     } catch (error) {
-      console.log("fuck out");
+      console.log("get out");
     }
   };
 

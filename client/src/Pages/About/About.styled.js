@@ -32,15 +32,16 @@ export const H1 = styled.div`
   font-weight: 500;
 `;
 export const Line = styled.div`
-width: 966px;
-height: 1.5px;
-background: #000;
-margin-top:25px;
+  width: 966px;
+  height: 1.5px;
+  background: #000;
+  margin-top: 25px;
 `;
 export const DesignBlock = styled.div`
   display: flex;
   justify-content: space between;
-  align-items:flex-start;
+  align-items: flex-start;
+  gap:100px;
   padding: 0 100px;
   margin: 50px 0;
   h1 {
@@ -67,10 +68,12 @@ export const DesignBlock = styled.div`
 export const TextBlock = styled.div`
   display: flex;
   justify-content: space between;
-  align-items:flex-start;
+  align-items: flex-start;
+  gap:30px;
   padding: 0 100px;
   margin: 50px 0;
   h1 {
+    text-align: left;
     color: #000;
     font-size: 43px;
     font-weight: 400;
@@ -85,4 +88,9 @@ export const BlockText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 45px;
+  h5 {
+    color: #7e7e7e;
+    font-size: 20px;
+    font-weight: 400;
+  }
 `;
