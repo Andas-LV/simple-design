@@ -1,27 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Plan from "./Planning";
 import Project from "./Project";
-import "./prices.css";
+import "./prices.styled.css";
 
-const Prices = ({ active, setActive }) => {
+const Prices = () => {
+  const [active, setActive] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [planContent, setPlanContent] = useState(true);
+  const [projectContent, setProjectContent] = useState(false);
+
+  const togglePlan = () => {
+    if (!active) {
+      setActive(true);
+      setOpen(false);
+      setPlanContent(true);
+      setProjectContent(false);
+    }
+  };
+
+  const toggleProject = () => {
+    if (!open) {
+      setOpen(true);
+      setActive(false);
+      setProjectContent(true);
+      setPlanContent(false);
+    }
+  };
+
   return (
     <>
       <div className="price-header">
         <div
           className={active ? "plan-btn active" : "plan-btn"}
-          onClick={() => setActive(false)}>
+          onClick={togglePlan}>
           Планировка
         </div>
         <div
-          className={
-            active ? "project-design-btn active" : "project-design-btn"
-          }
-          onClick={() => setActive(false)}>
+          className={open ? "project-design-btn active" : "project-design-btn"}
+          onClick={toggleProject}>
           Дизайн-проектов
         </div>
       </div>
-      <Plan />
-      <Project />
+      {planContent && <Plan />}
+      {projectContent && <Project />}
     </>
   );
 };
