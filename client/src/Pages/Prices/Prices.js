@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Plan from "./Planning";
 import Project from "./Project";
-import "./prices.styled.css";
+import { Wrapper, PlanBtn, ProjectDesignBtn } from "./prices.styled.js";
 
 const Prices = () => {
   const [active, setActive] = useState(true);
@@ -29,7 +29,7 @@ const Prices = () => {
 
   return (
     <>
-      <div className="price-header">
+      <Wrapper>
         <div
           className={active ? "plan-btn active" : "plan-btn"}
           onClick={togglePlan}>
@@ -40,7 +40,7 @@ const Prices = () => {
           onClick={toggleProject}>
           Дизайн-проектов
         </div>
-      </div>
+      </Wrapper>
       {planContent && <Plan />}
       {projectContent && <Project />}
     </>
