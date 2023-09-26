@@ -21,7 +21,4 @@ export const { PlanBtn, ProjectDesignBtn } = styled.div`
   &:hover{
     cursor:pointer;
   }
-  &:active{
-    background: #BD7048;
-  }
 `;
