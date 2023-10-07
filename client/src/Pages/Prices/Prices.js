@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Plan from "./Planning";
+import Planning from "./Planning";
 import Project from "./Project";
 import { Wrapper, PlanBtn, ProjectDesignBtn } from "./prices.styled.js";
 
@@ -30,18 +30,14 @@ const Prices = () => {
   return (
     <>
       <Wrapper>
-        <div
-          className={active ? "plan-btn active" : "plan-btn"}
-          onClick={togglePlan}>
+        <PlanBtn active={active} onClick={togglePlan}>
           Планировка
-        </div>
-        <div
-          className={open ? "project-design-btn active" : "project-design-btn"}
-          onClick={toggleProject}>
+        </PlanBtn>
+        <ProjectDesignBtn active={open} onClick={toggleProject}>
           Дизайн-проектов
-        </div>
+        </ProjectDesignBtn>
       </Wrapper>
-      {planContent && <Plan />}
+      {planContent && <Planning />}
       {projectContent && <Project />}
     </>
   );
