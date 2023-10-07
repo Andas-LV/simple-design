@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Planning from "./Planning";
 import Project from "./Project";
+import Questions from "../Home/Questions/Questions";
+import Footer from "../../Components/Footer/Footer"
 import { Wrapper, PlanBtn, ProjectDesignBtn } from "./prices.styled.js";
 
 const Prices = () => {
@@ -39,6 +41,8 @@ const Prices = () => {
       </Wrapper>
       {planContent && <Planning />}
       {projectContent && <Project />}
+      <Questions />
+      <Footer/>
     </>
   );
 };
