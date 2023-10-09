@@ -20,7 +20,7 @@ export const Text = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 120px auto 0 auto;
+  margin: 0 auto;;
   max-width: 1180px;
 `;
 
@@ -68,7 +68,7 @@ export const ItemButton = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 182px;
+  width: clamp(50px, 10vw, 180px);
   height: 56px;
   border-radius: 100px;
   background: #f5f5f5;

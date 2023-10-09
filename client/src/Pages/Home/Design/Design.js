@@ -38,7 +38,7 @@ export default function Design() {
               <img src={room.image} alt="img" />
               <SubItem>
                 <H4>{room.name}</H4>
-                <Link to="/designs">
+                <Link to="/Catalog">
                   <ItemButton>
                     <img src={bag} alt="img" />
                     Выбрать
@@ -61,7 +61,7 @@ export default function Design() {
               <img src={room.image} alt="img" />
               <SubItem>
                 <H4>{room.name}</H4>
-                <Link to="/designs">
+                <Link to="/Catalog">
                   <ItemButton>
                     <img src={bag} alt="img" />
                     Выбрать
@@ -84,7 +84,7 @@ export default function Design() {
               <img src={room.image} alt="img" />
               <SubItem>
                 <H4>{room.name}</H4>
-                <Link to="/designs">
+                <Link to="/Catalog">
                   <ItemButton>
                     <img src={bag} alt="img" />
                     Выбрать

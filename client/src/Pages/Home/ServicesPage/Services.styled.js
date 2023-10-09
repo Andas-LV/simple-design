@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 100vw;
-  margin-top: 120px;
+  margin-top: 50px;
+  margin-bottom:120px;
   gap: 50px;
 `;
 export const H1 = styled.div`

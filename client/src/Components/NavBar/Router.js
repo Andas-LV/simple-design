@@ -8,7 +8,6 @@ import Prices from "../../Pages/Prices/Prices";
 import Contact from "../../Pages/Contact/Contact";
 import Request from "../../Pages/Request/Request";
 import Privacy from "../Footer/Privacy/Privacy";
-import Designs from "../../Pages/Designs/Designs";
 
 const Routing = () => {
   return (
@@ -22,7 +21,6 @@ const Routing = () => {
         <Route exact path="/Contact" element={<Contact />} />
         <Route exact path="/Request" element={<Request />} />
         <Route exact path="/Privacy" element={<Privacy />} />
-        <Route exact path="/Designs" element={<Designs />} />
       </Routes>
     </Router>
   );
