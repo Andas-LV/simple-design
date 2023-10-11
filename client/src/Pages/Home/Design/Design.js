@@ -16,7 +16,7 @@ import {
   ItemButton,
 } from "../Design/Design.styled";
 import bag from "../../../Assets/img-mainpage/bag.svg";
-import { livingRooms, childrenRooms, corridors } from "./rooms.data";
+import { livingRooms, childrenRooms, corridors } from "../../../Components/rooms.data";
 
 export default function Design() {
   return (

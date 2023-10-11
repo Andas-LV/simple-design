@@ -66,7 +66,7 @@ export const SubItem = styled.div`
 `;
 export const ItemButton = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content:center;
   align-items: center;
   width: clamp(50px, 10vw, 180px);
   height: 56px;
@@ -74,6 +74,11 @@ export const ItemButton = styled.div`
   background: #f5f5f5;
   cursor: pointer;
   color:black;
+  text-align:center;
+  &:hover {
+    background: #d87e4d;
+    color:white;
+  }
 `;
 export const Button = styled.div`
   display: flex;
