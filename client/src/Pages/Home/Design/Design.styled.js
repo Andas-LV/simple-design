@@ -66,7 +66,7 @@ export const SubItem = styled.div`
 `;
 export const ItemButton = styled.div`
   display: flex;
-  justify-content:center;
+  justify-content:space-evenly;
   align-items: center;
   width: clamp(50px, 10vw, 180px);
   height: 56px;

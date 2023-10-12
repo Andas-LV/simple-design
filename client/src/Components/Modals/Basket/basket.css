@@ -175,9 +175,6 @@
   font-size: 20px;
   font-weight: 500;
 }
-.busket-request a{
-  /* max-width: 450px; */
-}
 .basket-request-btn {
   display: flex;
   justify-content: center;

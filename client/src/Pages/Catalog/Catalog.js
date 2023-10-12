@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
-import Basket from "../../Components/Modals/Basket/Basket"
+import Basket from "../../Components/Modals/Basket/Basket";
+import bag from "../../Assets/img-mainpage/bag.svg";
+import {Bag} from "./catalog.styled"
 import {
   Wrapper,
-  H1,
-  Text,
   Block,
   BlockName,
   H3,
@@ -35,13 +35,13 @@ const Catalog = () => {
 
   return (
     <>
+      <Bag onClick={() => setModalActive(true)}>
+        Моя корзина
+        <img src={bag} alt="img" className="bag" />
+      </Bag>
+      <Basket active={modalActive} setActive={setModalActive} />
+
       <Wrapper>
-        <H1>Дизайн комнат</H1>
-        <Text>
-          Выбирая дизайн комнаты, вы получаете смету со списком всех предметов в
-          интерьере, названиями, артикулами, цветом стен и так далее.
-        </Text>
-        <Basket active={modalActive} setActive={setModalActive}/>
         <Block>
           <BlockName>
             <H3>Гостиные</H3>
