@@ -8,7 +8,7 @@ export const Bag = styled.div`
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 150px;
+  width: 80px;
   height: 80px;
   background: #262626;
   color: white;
@@ -21,4 +21,18 @@ export const Bag = styled.div`
   &:hover {
     background: rgb(44, 44, 44);
   }
+`;
+export const Check = styled.div`
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  display:${(props) => (props.active ? "flex" : "none")};
+  justify-content:center;
+  align-items:center;
+  background: #ce2424;
+  color: white;
+  font-size: 16px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
 `;

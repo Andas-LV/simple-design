@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
 import Basket from "../../Components/Modals/Basket/Basket";
 import bag from "../../Assets/img-mainpage/bag.svg";
-import {Bag} from "./catalog.styled"
+import {Bag, Check} from "./catalog.styled"
 import {
   Wrapper,
   Block,
@@ -24,6 +24,7 @@ import {
 const Catalog = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [modalActive, setModalActive] = useState(false);
+  const [checkActive, setCheckActive] = useState(false);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -33,10 +34,22 @@ const Catalog = () => {
     setHoveredIndex(null);
   };
 
+  const checkToggle = () => {
+    if(checkActive){
+      setCheckActive(false)
+    }else{
+      setCheckActive(true)
+    }
+  }
+
+  let checkNumber = 0;
+
   return (
     <>
       <Bag onClick={() => setModalActive(true)}>
-        Моя корзина
+        <Check active={checkActive} setActive={setCheckActive}>
+          {checkNumber}
+        </Check>
         <img src={bag} alt="img" className="bag" />
       </Bag>
       <Basket active={modalActive} setActive={setModalActive} />
@@ -55,7 +68,8 @@ const Catalog = () => {
                   <H4>{room.name}</H4>
                   <ItemButton
                     onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}>
+                    onMouseLeave={() => handleMouseLeave(index)}
+                    onClick = {checkToggle}>
                     {hoveredIndex === index ? "Buy $" : `${room.price}`}
                   </ItemButton>
                 </SubItem>
