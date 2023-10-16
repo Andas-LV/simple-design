@@ -78,6 +78,9 @@ export const ItemButton = styled.div`
   &:hover {
     background: #d87e4d;
     color:white;
+    & img {
+      fill: white;
+    }
   }
 `;
 export const Button = styled.div`
