@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
 import Basket from "../../Components/Modals/Basket/Basket";
 import bag from "../../Assets/img-mainpage/bag.svg";
-import {Bag, Check} from "./catalog.styled"
+import { Bag, Check } from "./catalog.styled";
 import {
   Wrapper,
   Block,
@@ -26,8 +26,8 @@ const Catalog = () => {
   const [modalActive, setModalActive] = useState(false);
   const [checkActive, setCheckActive] = useState(false);
 
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
+  const handleMouseEnter = (i) => {
+    setHoveredIndex(i);
   };
 
   const handleMouseLeave = () => {
@@ -35,92 +35,54 @@ const Catalog = () => {
   };
 
   const checkToggle = () => {
-    if(checkActive){
-      setCheckActive(false)
-    }else{
-      setCheckActive(true)
+    if (checkActive) {
+      setCheckActive(false);
+    } else {
+      setCheckActive(true);
     }
-  }
+  };
 
-  let checkNumber = 0;
+  function renderBlocks(title, data) {
+    return (
+      <Block key={title}>
+        <BlockName>
+          <H3>{title}</H3>
+          <Line></Line>
+        </BlockName>
+        <ItemWrapper>
+          {data.map((room, i) => (
+            <Item key={room.id}>
+              <img src={room.image} alt="img" />
+              <SubItem>
+                <H4>{room.name}</H4>
+                <ItemButton
+                  onMouseEnter={() => handleMouseEnter(i)}
+                  onMouseLeave={() => handleMouseLeave(i)}
+                  onClick={checkToggle}>
+                  {hoveredIndex === i ? "Buy $" : `${room.price}`}
+                </ItemButton>
+              </SubItem>
+            </Item>
+          ))}
+        </ItemWrapper>
+      </Block>
+    );
+  }
 
   return (
     <>
       <Bag onClick={() => setModalActive(true)}>
         <Check active={checkActive} setActive={setCheckActive}>
-          {checkNumber}
+          0
         </Check>
         <img src={bag} alt="img" className="bag" />
       </Bag>
       <Basket active={modalActive} setActive={setModalActive} />
 
       <Wrapper>
-        <Block>
-          <BlockName>
-            <H3>Гостиные</H3>
-            <Line></Line>
-          </BlockName>
-          <ItemWrapper>
-            {livingRooms.map((room, index) => (
-              <Item key={room.id}>
-                <img src={room.image} alt="img" />
-                <SubItem>
-                  <H4>{room.name}</H4>
-                  <ItemButton
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}
-                    onClick = {checkToggle}>
-                    {hoveredIndex === index ? "Buy $" : `${room.price}`}
-                  </ItemButton>
-                </SubItem>
-              </Item>
-            ))}
-          </ItemWrapper>
-        </Block>
-
-        <Block>
-          <BlockName>
-            <H3>Детские</H3>
-            <Line></Line>
-          </BlockName>
-          <ItemWrapper>
-            {childrenRooms.map((room, index) => (
-              <Item key={room.id}>
-                <img src={room.image} alt="img" />
-                <SubItem>
-                  <H4>{room.name}</H4>
-                  <ItemButton
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}>
-                    {hoveredIndex === index ? "Buy $" : `${room.price}`}
-                  </ItemButton>
-                </SubItem>
-              </Item>
-            ))}
-          </ItemWrapper>
-        </Block>
-
-        <Block>
-          <BlockName>
-            <H3>Коридоры - прихожие</H3>
-            <Line></Line>
-          </BlockName>
-          <ItemWrapper>
-            {corridors.map((room, index) => (
-              <Item key={room.id}>
-                <img src={room.image} alt="img" />
-                <SubItem>
-                  <H4>{room.name}</H4>
-                  <ItemButton
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}>
-                    {hoveredIndex === index ? "Buy $" : `${room.price}`}
-                  </ItemButton>
-                </SubItem>
-              </Item>
-            ))}
-          </ItemWrapper>
-        </Block>
+        {renderBlocks("Гостиные", livingRooms)}
+        {renderBlocks("Детские", childrenRooms)}
+        {renderBlocks("Коридоры - прихожие", corridors)}
       </Wrapper>
       <Footer />
     </>
