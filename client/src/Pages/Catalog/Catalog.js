@@ -50,16 +50,16 @@ const Catalog = () => {
           <Line></Line>
         </BlockName>
         <ItemWrapper>
-          {data.map((room, i) => (
+          {data.map((room) => (
             <Item key={room.id}>
               <img src={room.image} alt="img" />
               <SubItem>
                 <H4>{room.name}</H4>
                 <ItemButton
-                  onMouseEnter={() => handleMouseEnter(i)}
-                  onMouseLeave={() => handleMouseLeave(i)}
+                  onMouseEnter={() => handleMouseEnter(room.id)}
+                  onMouseLeave={handleMouseLeave}
                   onClick={checkToggle}>
-                  {hoveredIndex === i ? "Buy $" : `${room.price}`}
+                  {hoveredIndex === room.id ? "Buy $" : `${room.price}`}
                 </ItemButton>
               </SubItem>
             </Item>
