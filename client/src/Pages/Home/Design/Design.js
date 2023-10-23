@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   H1,
@@ -15,7 +15,7 @@ import {
   Button,
   ItemButton,
 } from "../Design/Design.styled";
-import bag from "../../../Assets/img-mainpage/bag.svg";
+// import bag from "../../../Assets/img-mainpage/bag.svg";
 import {
   livingRooms,
   childrenRooms,
@@ -23,16 +23,6 @@ import {
 } from "../../../Components/rooms.data";
 
 export default function Design() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  const handleMouseEnter = (i) => {
-    setHoveredIndex(i);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
   function renderBlocks(title, data) {
     return (
       <Block key={title}>

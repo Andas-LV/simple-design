@@ -22,23 +22,17 @@ import {
 } from "../../Components/rooms.data";
 
 const Catalog = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [modalActive, setModalActive] = useState(false);
-  const [checkActive, setCheckActive] = useState(false);
+  const [count, setCount] = useState(0);
+  const [selectedItems, setSelectedItems] = useState([]);
 
-  const handleMouseEnter = (i) => {
-    setHoveredIndex(i);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
-  const checkToggle = () => {
-    if (checkActive) {
-      setCheckActive(false);
+  const handleItemClick = (room) => {
+    if (selectedItems.some((item) => item.id === room.id)) {
+      setSelectedItems(selectedItems.filter((item) => item.id !== room.id));
+      setCount(count - 1);
     } else {
-      setCheckActive(true);
+      setSelectedItems([...selectedItems, room]);
+      setCount(count + 1);
     }
   };
 
@@ -55,11 +49,12 @@ const Catalog = () => {
               <img src={room.image} alt="img" />
               <SubItem>
                 <H4>{room.name}</H4>
-                <ItemButton
-                  onMouseEnter={() => handleMouseEnter(room.id)}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={checkToggle}>
-                  {hoveredIndex === room.id ? "Buy $" : `${room.price}`}
+                <ItemButton onClick={() => handleItemClick(room)}>
+                  {selectedItems.some((item) => item.id === room.id) ? (
+                    <span>&#10003;</span>
+                  ) : (
+                    `${room.price}`
+                  )}
                 </ItemButton>
               </SubItem>
             </Item>
@@ -72,12 +67,14 @@ const Catalog = () => {
   return (
     <>
       <Bag onClick={() => setModalActive(true)}>
-        <Check active={checkActive} setActive={setCheckActive}>
-          0
-        </Check>
+        <Check active={count > 0}>{count}</Check>
         <img src={bag} alt="img" className="bag" />
       </Bag>
-      <Basket active={modalActive} setActive={setModalActive} />
+      <Basket
+        active={modalActive}
+        setActive={setModalActive}
+        selectedItems={selectedItems}
+      />
 
       <Wrapper>
         {renderBlocks("Гостиные", livingRooms)}
@@ -88,4 +85,5 @@ const Catalog = () => {
     </>
   );
 };
+
 export default Catalog;
