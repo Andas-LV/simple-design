@@ -4,8 +4,7 @@ import close from "../../../Assets/img-mainpage/close.svg";
 import { Link } from "react-router-dom";
 
 const Basket = ({ active, setActive, selectedItems }) => {
-  // let finalCheck = selectedItems.reduce((total, item) => total + item.price, 0);
-  let finalCheck = 0;
+  let finalCheck = selectedItems? selectedItems.reduce((total, item) => total + item.price, 0): 0;
   return (
     <div
       className={active ? "busket active" : "busket"}
@@ -21,17 +20,17 @@ const Basket = ({ active, setActive, selectedItems }) => {
         </div>
 
         <div className="basket-items">
-          {selectedItems.length === 0 ? (
+          {selectedItems && selectedItems.length === 0 ? (
             <p>Your basket is empty.</p>
           ) : (
-            <ul>
+            <>
               {selectedItems.map((item) => (
-                <li key={item.id}>
+                <span key={item.id}>
                   <h3>{item.name}</h3>
                   <p>Price: {item.price}</p>
-                </li>
+                </span>
               ))}
-            </ul>
+            </>
           )}
         </div>
 
@@ -48,4 +47,5 @@ const Basket = ({ active, setActive, selectedItems }) => {
     </div>
   );
 };
+
 export default Basket;
