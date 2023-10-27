@@ -1,6 +1,6 @@
 .busket {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -19,176 +19,50 @@
   pointer-events: all;
 }
 .busket-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
   color: black;
   background: white;
-  width: 90vw;
+  width: 50vw;
   max-height: 80%;
+  border-radius:7px;
   overflow-y: auto;
-  padding: 0 45px 0 90px;
+  padding: 50px 45px 50px 90px;
 }
-.busket-wrapper p {
-  font-weight: 400;
-  font-size: 20px;
-}
-.busket-wrapper h1 {
-  display: flex;
-  justify-content: flex-start;
-  color: black !important;
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 35px;
+.busket-content{
+  display:flex;
+  justify-content: space-around;
 }
 .closer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 30px;
-  gap: 10px;
-}
-.closer p {
-  color: rgba(40, 40, 40, 0.7);
-  font-size: 20px;
-  font-weight: 500;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .close {
   cursor: pointer;
 }
-.busket-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* width: calc(90vw / 2); */
-}
-.bill-list {
-}
-.bill-list-items {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  margin-bottom: 45px;
-}
-.bill-list-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
-.bill-list-item h3 {
-  color: #bd7048;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 20px;
-  font-weight: 500;
-}
-.bill-list-item p {
-  color: #000;
-  font-size: 20px;
-  font-weight: 500;
-}
-.bill-list-item li {
-  color: rgba(38, 38, 38, 0.5);
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  justify-content: flex-start;
-}
-.bill-list-item ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.checkBox {
-  cursor: pointer;
-}
-.checkMark {
-  display: inline-block;
-  width: 37px;
-  height: 37px;
-  border: 2.5px solid #000;
-  padding: 7px;
-  cursor: pointer;
-}
-.bill-name {
-  display: flex;
+.btn-wrapper{
+  display:flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-}
-
-.bill-list-extraServices {
-  gap: 20px;
-}
-.eS-block {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 40px;
-}
-.eS-block-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 30px;
-}
-.bill {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  border-radius: 15px;
-  background: #fff6f1;
-  padding: 45px;
-}
-.bill-block {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-.bill-block-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 500px;
-  margin-left: 30px;
-}
-.bill-block h3 {
-  color: #262626;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 45px 0;
-}
-.bill-block-general {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.bill-block-general p {
-  color: #262626;
-  font-size: 20px;
-  font-weight: 600;
-}
-.bill-block p {
-  color: #bd7048;
-  font-size: 20px;
-  font-weight: 500;
-}
-.bill-block.number {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 20px;
-  font-weight: 500;
 }
 .basket-request-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 74px;
+  height: 50px;
   width:max-content;
-  border-radius: 100px;
+  border-radius: 50px;
   background: #bd7048;
   color: #fff;
   font-size: 15px;
   font-weight: 500;
   transition: 0.4s ease-in-out;
   cursor: pointer;
-  width:40vw;
+  width:20vw;
 }
 .basket-request-btn:hover {
   background: #a3552b;
@@ -197,8 +71,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 74px;
-  border-radius: 100px;
+  height: 50px;
+  border-radius: 50px;
   background: #FFDDCB;
   color: #BD7048;
   font-size: 15px;
@@ -206,7 +80,7 @@
   transition: 0.4s ease-in-out;
   cursor: pointer;
   margin: 20px 0;
-  width:40vw;
+  width:20vw;
 }
 .pay-btn:hover{
   background: #ffccb1;
@@ -215,15 +89,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 74px;
-  border-radius: 100px;
+  height: 50px;
+  border-radius: 50px;
   background: #F14635;
   color: #fff;
   font-size: 15px;
   font-weight: 500;
   transition: 0.4s ease-in-out;
   cursor: pointer;
-  width:40vw;
+  width:20vw;
 }
 .kaspi-pay-btn:hover{
   background: #d23b2d;

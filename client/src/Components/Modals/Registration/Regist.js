@@ -15,7 +15,7 @@ const Regist = ({ active, setActive }) => {
       });
       console.log("Registration successful");
     } catch (error) {
-      console.log("get out");
+      console.log("registration failed");
     }
   };
 

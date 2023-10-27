@@ -11,6 +11,7 @@ import bag from "../../../Assets/img-mainpage/bag.svg";
 
 export default function HomeMain() {
   const [modalActive, setModalActive] = useState(false);
+  const [selectedItems, setSelectedItems] = useState([]);
 
   return (
     <div className="home-main">
@@ -20,7 +21,11 @@ export default function HomeMain() {
           Моя корзина
           <img src={bag} alt="img" className="bag" />
         </span>
-        <Basket active={modalActive} setActive={setModalActive}/>
+        <Basket
+        active={modalActive}
+        setActive={setModalActive}
+        selectedItems={selectedItems}
+      />
         {/* MODAL END*/}
         <h1>
           Дизайн-проект для вашей квартиры <br /> за 2 недели и 199 000 ₸

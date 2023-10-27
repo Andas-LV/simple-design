@@ -44,8 +44,7 @@ app.post("/login", async (req, res) => {
     const token = sign({ username }, secret);
     return res.json({ token });
   } else {
-    return console.log("fuck out");;
-    // return res.status(401).json({ message: "Authentication failed" });
+    return res.status(401).json({ message: "Authentication failed" });
   }
 });
 
