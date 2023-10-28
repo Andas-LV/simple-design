@@ -2,7 +2,7 @@ import React from "react";
 
 const Privacy = () => {
   return (
-    <div>
+    <div style={{ margin: '40px' }}>
       Effective Date: April 25, 2023 This Privacy Policy describes Meta
       Platforms, Inc. ("Meta", "we", "us" or "our") practices for handling your
       information in connection with this website and our open source-related

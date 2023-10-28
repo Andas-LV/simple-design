@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../../Pages/Home/Index-Home/Index-Home";
-import Test from "../../Pages/TestPage/Test";
+import Test from "../../Pages/Other/Test";
 import Catalog from "../../Pages/Catalog/Catalog";
 import About from "../../Pages/About/About";
 import Prices from "../../Pages/Prices/Prices";
-import Contact from "../../Pages/Contact/Contact";
-import Request from "../../Pages/Request/Request";
+import Contact from "../../Pages/Other/Contact";
+import Request from "../../Pages/Other/Request";
 import Privacy from "../Footer/Privacy/Privacy";
 
 const Routing = () => {

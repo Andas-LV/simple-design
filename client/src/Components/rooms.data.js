@@ -1,12 +1,12 @@
-import img1 from "../Assets/img-mainpage/living-room-1.svg";
-import img2 from "../Assets/img-mainpage/living-room-2.svg";
-import img3 from "../Assets/img-mainpage/living-room-3.svg";
-import img4 from "../Assets/img-mainpage/children-1.svg";
-import img5 from "../Assets/img-mainpage/children-3.svg";
-import img6 from "../Assets/img-mainpage/children-3.svg";
-import img7 from "../Assets/img-mainpage/corridors-1.svg";
-import img8 from "../Assets/img-mainpage/corridors-2.svg";
-import img9 from "../Assets/img-mainpage/corridors-3.svg";
+import img1 from "../Assets/rooms/living-room-1.svg";
+import img2 from "../Assets/rooms/living-room-2.svg";
+import img3 from "../Assets/rooms/living-room-3.svg";
+import img4 from "../Assets/rooms/children-1.svg";
+import img5 from "../Assets/rooms/children-3.svg";
+import img6 from "../Assets/rooms/children-3.svg";
+import img7 from "../Assets/rooms/corridors-1.svg";
+import img8 from "../Assets/rooms/corridors-2.svg";
+import img9 from "../Assets/rooms/corridors-3.svg";
 
 export const livingRooms = [
     {
