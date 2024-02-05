@@ -2,19 +2,8 @@ import React, { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
 import Basket from "../../Components/Modals/Basket/Basket";
 import bag from "../../Assets/img-mainpage/bag.svg";
-import { Bag, Check } from "./catalog.styled";
-import {
-  Wrapper,
-  Block,
-  BlockName,
-  H3,
-  Line,
-  ItemWrapper,
-  Item,
-  SubItem,
-  H4,
-  ItemButton,
-} from "../Home/Design/Design.styled";
+import styles from './catalog.module.css';
+
 import {
   livingRooms,
   childrenRooms,
@@ -38,49 +27,49 @@ const Catalog = () => {
 
   function renderBlocks(title, data) {
     return (
-      <Block key={title}>
-        <BlockName>
-          <H3>{title}</H3>
-          <Line></Line>
-        </BlockName>
-        <ItemWrapper>
+      <div className={styles.designBlock} key={title}>
+        <div className={styles.designBlockName}>
+          <div className={styles.designH3}>{title}</div>
+          <div className={styles.designLine}></div>
+        </div>
+        <div className={styles.designItemWrapper}>
           {data.map((room) => (
-            <Item key={room.id}>
+            <div className={styles.designItem} key={room.id}>
               <img src={room.image} alt="img" />
-              <SubItem>
-                <H4>{room.name}</H4>
-                <ItemButton onClick={() => handleItemClick(room)}>
+              <div className={styles.designSubItem}>
+                <h4 className={styles.designH4}>{room.name}</h4>
+                <div className={styles.designItemButton} onClick={() => handleItemClick(room)}>
                   {selectedItems.some((item) => item.id === room.id) ? (
                     <span>&#10003;</span>
                   ) : (
                     `${room.price}`
                   )}
-                </ItemButton>
-              </SubItem>
-            </Item>
+                </div>
+              </div>
+            </div>
           ))}
-        </ItemWrapper>
-      </Block>
+        </div>
+      </div>
     );
   }
 
   return (
     <>
-      <Bag onClick={() => setModalActive(true)}>
-        <Check active={count > 0}>{count}</Check>
+      <div className={styles.bag} onClick={() => setModalActive(true)}>
+        <div className={styles.check} active={count > 0}>{count}</div>
         <img src={bag} alt="img" className="bag" />
-      </Bag>
+      </div>
       <Basket
         active={modalActive}
         setActive={setModalActive}
         selectedItems={selectedItems}
       />
 
-      <Wrapper>
+      <div className={styles.wrapper}>
         {renderBlocks("Гостиные", livingRooms)}
         {renderBlocks("Детские", childrenRooms)}
         {renderBlocks("Коридоры - прихожие", corridors)}
-      </Wrapper>
+      </div>
       <Footer />
     </>
   );

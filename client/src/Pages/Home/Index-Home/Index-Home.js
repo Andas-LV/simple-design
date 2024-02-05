@@ -6,11 +6,10 @@ import Design from "../Design/Design";
 import TestPageLink from "../TestPageLink/TestLink";
 import Questions from "../Questions/Questions";
 import Footer from "../../../Components/Footer/Footer"
-import {Wrapper} from "./Index-Home.styled";
 
 export default function Home() {
   return (
-    <Wrapper>
+    <wrapper>
       <HomeMain/>
       <Info/>
       <Services/>
@@ -18,6 +17,6 @@ export default function Home() {
       <TestPageLink/>
       <Questions/>
       <Footer/>
-    </Wrapper>
+    </wrapper>
   );
 }

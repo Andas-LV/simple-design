@@ -1,13 +1,6 @@
 import React from "react";
 import Footer from "../../Components/Footer/Footer";
-import {
-  Wrapper,
-  Line,
-  DesignBlock,
-  BlockText,
-  TextBlock,
-} from "./About.styled";
-import "./about.css";
+import styles from "./About.module.css";  // Import your CSS module
 import img1 from "../../Assets/About/main-top.svg";
 import img2 from "../../Assets/About/2-photo.svg";
 import img3 from "../../Assets/About/carousel.svg";
@@ -16,14 +9,14 @@ import img5 from "../../Assets/About/video-preview.svg";
 
 const About = () => {
   return (
-    <Wrapper>
+    <div className={styles.Wrapper}>
       <h4>
         Команда Simple <span>Design</span>
       </h4>
       <h1>Первый интернет-сервис дизайна интерьера в Казахстане</h1>
-      <img src={img1} alt="img" className="about-main-img" />
-      <DesignBlock>
-        <BlockText>
+      <img src={img1} alt="img" className={styles["about-main-img"]} />
+      <div className={styles.DesignBlock}>
+        <div className={styles.BlockText}>
           <h2>
             <span>10</span> дизайн-концепций, отражающих актуальные стили в
             интерьере
@@ -35,21 +28,21 @@ const About = () => {
             инструкцию по реализации, смету с материалами, чек-лист для проверки
             строителей.
           </p>
-        </BlockText>
-        <img src={img2} alt="img" className="about-main-img" />
-      </DesignBlock>
+        </div>
+        <img src={img2} alt="img" className={styles["about-main-img"]} />
+      </div>
 
-      <TextBlock>
-        <Line></Line>
+      <div className={styles.TextBlock}>
+        <div className={styles.Line}></div>
         <h1>
           В команде Simple design <span>21 человек</span>
         </h1>
-      </TextBlock>
-      <img src={img3} alt="about-img" className="about-img-3" />
+      </div>
+      <img src={img3} alt="about-img" className={styles["about-img-3"]} />
 
-      <DesignBlock>
-        <img src={img4} alt="img" className="about-main-img" />
-        <BlockText>
+      <div className={styles.DesignBlock}>
+        <img src={img4} alt="img" className={styles["about-main-img"]} />
+        <div className={styles.BlockText}>
           <h2>Юрий Черепанов</h2>
           <h5>
             Дизайнер, основатель студии Design Republic основатель сервиса
@@ -64,19 +57,19 @@ const About = () => {
             мебель; как выбрать надежную строительную бригаду; и как на всём
             этом еще и сэкономить?
           </p>
-        </BlockText>
-      </DesignBlock>
-      <TextBlock>
+        </div>
+      </div>
+      <div className={styles.TextBlock}>
         <h1>
           <span>За 4 года</span> мы реализовали более 250 проектов
         </h1>
-        <Line></Line>
-      </TextBlock>
-      <DesignBlock>
+        <div className={styles.Line}></div>
+      </div>
+      <div className={styles.DesignBlock}>
         <img src={img5} alt="img" />
-      </DesignBlock>
+      </div>
       <Footer />
-    </Wrapper>
+    </div>
   );
 };
 export default About;

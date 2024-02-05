@@ -1,5 +1,6 @@
+// Questions.js
 import React, { useState } from "react";
-import { Wrapper, H1, Question, QuesName, Text } from "./Questions.styled";
+import styles from "./Questions.module.css";
 import plus from "../../../Assets/img-mainpage/plus.svg";
 
 export default function Questions() {
@@ -10,24 +11,24 @@ export default function Questions() {
   };
 
   return (
-    <Wrapper>
-      <H1>Часто задаваемые вопросы</H1>
+    <div className={styles.Wrapper}>
+      <div className={styles.H1}>Часто задаваемые вопросы</div>
       {[...Array(5)].map((_, index) => (
-        <div key={index}>
-          <Question onClick={() => toggleQuestion(index)}>
+        <div key={index} className={styles.container}>
+          <div className={styles.Question} onClick={() => toggleQuestion(index)}>
             <img src={plus} alt="img" />
-            <QuesName>Вопрос</QuesName>
-          </Question>
+            <div className={styles.QuesName}>Вопрос</div>
+          </div>
           {activeQuestion === index && (
-            <Text>
+            <div className={styles.Text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
               necessitatibus iste mollitia ea. Fugiat, repellat a necessitatibus
               soluta itaque iure maiores? Suscipit aut voluptatem, odit qui
               doloremque labore voluptatum at?
-            </Text>
+            </div>
           )}
         </div>
       ))}
-    </Wrapper>
+    </div>
   );
 }

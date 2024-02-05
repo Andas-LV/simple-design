@@ -1,6 +1,7 @@
+// Services.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { Wrapper, H1, Block1, Block2, Block3, Info, SubBlock, Btn} from "./Services.styled";
+import styles from "./Services.module.css";
 import Request from "../../../Components/RequestLink/Request";
 import Img1 from "../../../Assets/img-mainpage/main-3.svg";
 import Img2 from "../../../Assets/img-mainpage/main-4.svg";
@@ -8,10 +9,10 @@ import Img3 from "../../../Assets/img-mainpage/main-5.svg";
 
 export default function Services() {
   return (
-    <Wrapper>
-      <H1>Наши услуги</H1>
-      <Block1>
-        <Info>
+    <div className={styles.Wrapper}>
+      <div className={styles.H1}>Наши услуги</div>
+      <div className={styles.Block1}>
+        <div className={styles.Info}>
           <h2>Планировка за 99 000 ₸</h2>
           <p>Срок выполнения: 5 дней</p>
           <p>
@@ -27,12 +28,12 @@ export default function Services() {
             <li>план монтажа перегородок</li>
           </ul>
           <Request />
-        </Info>
+        </div>
         <img src={Img1} alt="img" />
-      </Block1>
-      <Block2>
+      </div>
+      <div className={styles.Block2}>
         <img src={Img2} alt="img" />
-        <Info>
+        <div className={styles.Info}>
           <h2>Дизайн-проект за 199 000 ₸</h2>
           <p>Срок выполнения: 14 дней</p>
           <p>
@@ -54,18 +55,18 @@ export default function Services() {
             <li>план дверей</li>
           </ul>
           <Request />
-        </Info>
-      </Block2>
-      <Block3>
+        </div>
+      </div>
+      <div className={styles.Block3}>
         <img src={Img3} alt="img" />
-        <SubBlock>
+        <div className={styles.SubBlock}>
           <h2>Планируете ремонт?</h2>
           <p>Ответьте на несколько вопросов и получите <br/> бесплатный чек-лист по ремонту</p>
           <Link to="/request">
-          <Btn>Получить чек-лист</Btn>
+            <div className={styles.Btn}>Получить чек-лист</div>
           </Link>
-        </SubBlock>
-      </Block3>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 }

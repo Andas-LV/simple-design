@@ -1,0 +1,83 @@
+.designWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.designH3 {
+  color: #262626;
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 40px 0;
+}
+.designText {
+  color: rgba(38, 38, 38, 0.7);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* styles.module.css */
+
+.bag {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 80px;
+  height: 80px;
+  background: #d9d6d6;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 100px 0 0 100px;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.4s all;
+}
+
+.bag:hover {
+  background: rgb(198, 198, 198);
+}
+
+.check {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ce2424;
+  color: white;
+  font-size: 16px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.designItemWrapper {
+  max-width: 1550px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 660px) {
+  .designItemWrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+  }
+}

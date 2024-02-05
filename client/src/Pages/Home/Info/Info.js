@@ -1,41 +1,42 @@
+// Info.js
 import React from "react";
-import {H1,H4,P,Wrapper,InfoBlock,InfoBlocks,TextGroup,Number} from "../Info/Info.styled"
+import styles from "./Info.module.css";
 import img from "../../../Assets/img-mainpage/main-2.svg";
 
-export default function Info() {
+const InfoBlock = ({ number, title, description }) => (
+  <div className={styles.InfoBlocks}>
+    <div className={styles.Number}>{number}</div>
+    <div className={styles.TextGroup}>
+      <div className={styles.H4}>{title}</div>
+      <div className={styles.P}>{description}</div>
+    </div>
+  </div>
+);
+
+const Info = () => {
   return (
-    <Wrapper>
-      <InfoBlock>
-        <H1>Как это работает?</H1>
-        <InfoBlocks>
-          <Number>01</Number>
-          <TextGroup>
-            <H4>Выбор состава проекта</H4>
-            <P>
-              Выберите состав вашего проекта: только планировка или
-              дизайн-проект
-            </P>
-          </TextGroup>
-        </InfoBlocks>
-        <InfoBlocks>
-          <Number>02</Number>
-          <TextGroup>
-            <h4>Настройка проекта</h4>
-            <p>
-              Отметьте в корзине нужен ли вам профессиональный замер, подбор
-              строительной бригады или точный просчет сметы
-            </p>
-          </TextGroup>
-        </InfoBlocks>
-        <InfoBlocks>
-          <Number>03</Number>
-          <TextGroup>
-            <h4>Создание чертежей</h4>
-            <p>Наши дизайнеры спроектируют интерьер, подготовят чертежи.</p>
-          </TextGroup>
-        </InfoBlocks>
-      </InfoBlock>
-      <img src={img} alt="img"/>
-    </Wrapper>
+    <div className={styles.Wrapper}>
+      <div className={styles.InfoBlock}>
+        <div className={styles.H1}>Как это работает?</div>
+        <InfoBlock
+          number="01"
+          title="Выбор состава проекта"
+          description="Выберите состав вашего проекта: только планировка или дизайн-проект"
+        />
+        <InfoBlock
+          number="02"
+          title="Настройка проекта"
+          description="Отметьте в корзине нужен ли вам профессиональный замер, подбор строительной бригады или точный просчет сметы"
+        />
+        <InfoBlock
+          number="03"
+          title="Создание чертежей"
+          description="Наши дизайнеры спроектируют интерьер, подготовят чертежи."
+        />
+      </div>
+      <img src={img} alt="img" />
+    </div>
   );
-}
+};
+
+export default Info;

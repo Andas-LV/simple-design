@@ -1,24 +1,19 @@
+// Footer.js
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Wrapper,
-  FooterBottom,
-  FooterTop,
-  Logo,
-  FooterBlock,
-} from "./Footer.styled";
+import styles from "./Footer.module.css";
 import logo from "../../Assets/img-mainpage/logo.svg";
 import phone from "../../Assets/img-mainpage/phone.svg";
 
 export default function Footer() {
   return (
-    <Wrapper>
-      <FooterTop>
-        <Logo>
+    <div className={styles.wrapper}>
+      <div className={styles.footerTop}>
+        <div className={styles.logo}>
           <img src={logo} alt="logo-img" />
           <p>дизайн интерьеров</p>
-        </Logo>
-        <FooterBlock>
+        </div>
+        <div className={styles.footerBlock}>
           <ul>
             <Link to="/">
               <li>Главная</li>
@@ -33,27 +28,27 @@ export default function Footer() {
               <li>Цены</li>
             </Link>
           </ul>
-        </FooterBlock>
-        <FooterBlock>
+        </div>
+        <div className={styles.footerBlock}>
           <ul>
             <Link to="/privacy">
               <li>Политика конфиденциальности</li>
               <li>Условия пользования</li>
             </Link>
           </ul>
-        </FooterBlock>
-        <FooterBlock>
+        </div>
+        <div className={styles.footerBlock}>
           <ul>
             <li>
               <img src={phone} alt="img" /> <p>+7 700 505 30 00</p>
             </li>
             <li>с 9:00 до 18:00</li>
           </ul>
-        </FooterBlock>
-      </FooterTop>
-      <FooterBottom>
-        <p>(с) 2023. Все права защищены.</p>
-      </FooterBottom>
-    </Wrapper>
+        </div>
+      </div>
+      <div className={styles.footerBottom}>
+        <p>(с) 2024. Все права защищены.</p>
+      </div>
+    </div>
   );
 }

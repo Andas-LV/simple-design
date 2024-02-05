@@ -1,20 +1,20 @@
+// TestLink.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { Wrapper, H1, Text, Button } from "../TestPageLink/TestLink.styled";
-import "./testLink.css";
+import styles from "./TestLink.module.css";
 
 export default function TestLink() {
   return (
-    <div className="IMG">
-      <Wrapper>
-        <H1>Давайте определим, что вам нравится</H1>
-        <Text>
+    <div className={styles.img}>
+      <div className={styles.Wrapper}>
+        <div className={styles.H1}>Давайте определим, что вам нравится</div>
+        <div className={styles.Text}>
           Пройдите короткий тест и мы покажем подходящие вам стилевые решения
-        </Text>
+        </div>
         <Link to="/test">
-          <Button>Пройти тест</Button>
+          <div className={styles.Button}>Пройти тест</div>
         </Link>
-      </Wrapper>
+      </div>
     </div>
   );
 }

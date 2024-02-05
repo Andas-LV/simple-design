@@ -1,66 +1,55 @@
+// Design.js
+
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  H1,
-  Wrapper,
-  Text,
-  Block,
-  BlockName,
-  H3,
-  Line,
-  ItemWrapper,
-  Item,
-  SubItem,
-  H4,
-  Button,
-  ItemButton,
-} from "../Design/Design.styled";
+import styles from "./Design.module.css";
 import {
   livingRooms,
   childrenRooms,
   corridors,
 } from "../../../Components/rooms.data";
 
+export function renderBlocks(title, data) {
+  return (
+    <div key={title} className={styles.designBlock}>
+      <div className={styles.designBlockName}>
+        <div className={styles.designH3}>{title}</div>
+        <div className={styles.designLine}></div>
+      </div>
+      <div className={styles.designItemWrapper}>
+        {data.map((room) => (
+          <div key={room.id} className={styles.designItem}>
+            <img src={room.image} alt="img" className={styles.img}/>
+            <div className={styles.designSubItem}>
+              <div className={styles.designH4}>{room.name}</div>
+              <Link to="/Catalog">
+                <div className={styles.designItemButton}>Выбрать</div>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Design() {
-  function renderBlocks(title, data) {
-    return (
-      <Block key={title}>
-        <BlockName>
-          <H3>{title}</H3>
-          <Line></Line>
-        </BlockName>
-        <ItemWrapper>
-          {data.map((room) => (
-            <Item key={room.id}>
-              <img src={room.image} alt="img" />
-              <SubItem>
-                <H4>{room.name}</H4>
-                <Link to="/Catalog">
-                  <ItemButton>Выбрать</ItemButton>
-                </Link>
-              </SubItem>
-            </Item>
-          ))}
-        </ItemWrapper>
-      </Block>
-    );
-  }
 
   return (
-    <Wrapper>
-      <H1>Дизайн комнат</H1>
-      <Text>
+    <div className={styles.designWrapper}>
+      <div className={styles.designH1}>Дизайн комнат</div>
+      <div className={styles.designText}>
         Выбирая дизайн комнаты, вы получаете смету со списком всех предметов в
         интерьере, названиями, артикулами, цветом стен и так далее.
-      </Text>
+      </div>
 
       {renderBlocks("Гостиные", livingRooms)}
       {renderBlocks("Детские", childrenRooms)}
       {renderBlocks("Коридоры - прихожие", corridors)}
 
       <Link to="/catalog">
-        <Button>К каталогу комнат</Button>
+        <div className={styles.designButton}>К каталогу комнат</div>
       </Link>
-    </Wrapper>
+    </div>
   );
 }

@@ -1,18 +1,18 @@
 import React from "react";
-import { Wrapper, Pdf } from "./Request.styled";
+import styles from "./Request.module.css";
 import { Link } from "react-router-dom";
 import pdf from "../../Assets/img-mainpage/pdf.svg";
 
 export default function Request() {
   return (
-    <Wrapper>
+    <div className={styles.Wrapper}>
       <Link to="/request">
         <button>Оставить заявку</button>
       </Link>
-      <Pdf>
+      <div className={styles.Pdf}>
         <img src={pdf} alt="img" />
         <p>Посмотреть пример</p>
-      </Pdf>
-    </Wrapper>
+      </div>
+    </div>
   );
 }

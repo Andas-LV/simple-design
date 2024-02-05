@@ -1,0 +1,109 @@
+.Wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.Wrapper h1 {
+  color: #060606;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.Wrapper h4 {
+  color: #060606;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 40px 0 20px 0;
+}
+
+.Wrapper span {
+  opacity: 0.7;
+  color: #bd7048;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* H1 styles */
+.H1 {
+  color: #060606;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+/* Line styles */
+.Line {
+  width: 966px;
+  height: 1.5px;
+  background: #000;
+  margin-top: 25px;
+}
+
+/* DesignBlock styles */
+.DesignBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+  padding: 0 100px;
+  margin: 50px 0;
+}
+
+.DesignBlock h1,
+.DesignBlock h2 {
+  color: #000;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+.DesignBlock span {
+  color: #bd7048;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+.DesignBlock p {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* TextBlock styles */
+.TextBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 0 100px;
+  margin: 50px 0;
+}
+
+.TextBlock h1 {
+  text-align: left;
+  color: #000;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+.TextBlock span {
+  color: #bd7048;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+/* BlockText styles */
+.BlockText {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.BlockText h5 {
+  color: #7e7e7e;
+  font-size: 20px;
+  font-weight: 400;
+}

@@ -1,13 +1,13 @@
-import styled from "styled-components";
-
-export const Wrapper = styled.div`
+/* Questions.module.css */
+.Wrapper {
   max-width: 1180px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-export const H1 = styled.div`
+}
+
+.H1 {
   color: #262626;
   text-align: center;
   font-size: 40px;
@@ -15,29 +15,36 @@ export const H1 = styled.div`
   font-weight: 700;
   line-height: normal;
   margin-bottom: 30px;
-`;
-export const Text = styled.div`
+}
+
+.Text {
   color: rgba(38, 38, 38, 0.7);
   font-size: 20px;
   font-weight: 500;
   margin: 25px 0;
-`;
-export const Question = styled.div`
+}
+
+.Question {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 1180px;
+  width: 100%;
   border-radius: 100px;
   background: #fafafa;
   padding: 15px;
   margin: 10px 0;
   cursor: pointer;
-`;
-export const QuesName = styled.div`
+}
+
+.QuesName {
   color: #262626;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   margin-left: 20px;
-`;
+}
+
+.container{
+  max-width: 100%;
+}
