@@ -113,7 +113,7 @@
 }
 
 .about-img-3 {
-  width: calc(100vw - 200px);
+  width: calc(100vw - 10vw);
   height: auto;
   margin: 0 auto 50px auto;
 }
