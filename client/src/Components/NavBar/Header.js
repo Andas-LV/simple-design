@@ -16,7 +16,7 @@ const Header = () => {
   const [burgerChecked, setBurgerChecked] = useState(false);
   const [token, setToken] = useState("");
 
-  const DropDown = () => (
+  const DropDown = () =>
     openDropDown && (
       <div className={styles.navDropdown}>
         <ul>
@@ -27,8 +27,7 @@ const Header = () => {
           <li>с 9:00 до 18:00</li>
         </ul>
       </div>
-    )
-  );
+    );
 
   const handleLogin = (newToken) => {
     setToken(newToken);
@@ -45,13 +44,15 @@ const Header = () => {
             </div>
 
             <div className={styles.navItems}>
-              <a href={'/'}>Home</a>
+              <a href={"/"}>Home</a>
               {["Test", "Catalog", "About", "Prices"].map((item) => (
                 <a key={item} className={styles.navItem} href={`/${item}`}>
                   {item}
                 </a>
               ))}
-              <span onMouseEnter={() => setOpenDropdown(true)} onMouseLeave={() => setOpenDropdown(false)}>
+              <span
+                onMouseEnter={() => setOpenDropdown(true)}
+                onMouseLeave={() => setOpenDropdown(false)}>
                 Contacts
                 <DropDown />
               </span>
@@ -80,7 +81,10 @@ const Header = () => {
               <Regist active={modalActive} setActive={setModalActive} />
             </div>
 
-            <Burger active={burgerChecked} onClick={() => setBurgerChecked(!burgerChecked)} />
+            <Burger
+              active={burgerChecked}
+              onClick={() => setBurgerChecked(!burgerChecked)}
+            />
 
             <label className={styles.burger} htmlFor="burger">
               <input

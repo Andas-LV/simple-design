@@ -3,9 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Services.module.css";
 import Request from "../../../Components/RequestLink/Request";
-import Img1 from "../../../Assets/img-mainpage/main-3.svg";
-import Img2 from "../../../Assets/img-mainpage/main-4.svg";
-import Img3 from "../../../Assets/img-mainpage/main-5.svg";
+import Img1 from "../../../Assets/img-mainpage/main-3.jpg";
+import Img2 from "../../../Assets/img-mainpage/main-4.jpg";
+import Img3 from "../../../Assets/img-mainpage/main-5.jpg";
 
 export default function Services() {
   return (

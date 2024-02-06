@@ -47,8 +47,8 @@
   padding-left: 178px;
 }
 
-.img{
-  background-image: url("../../../Assets/img-mainpage/main-7.svg");
+.img {
+  background-image: url("../../../Assets/img-mainpage/main-7.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -57,11 +57,11 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .Wrapper{
+  .Wrapper {
     padding-left: 20px;
   }
-  .Button{
-    width:50vw;
+  .Button {
+    width: 50vw;
     height: 10vh;
   }
 }

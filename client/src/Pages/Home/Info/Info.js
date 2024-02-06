@@ -1,7 +1,7 @@
 // Info.js
 import React from "react";
 import styles from "./Info.module.css";
-import img from "../../../Assets/img-mainpage/main-2.svg";
+import img from "../../../Assets/img-mainpage/main-2.jpg";
 
 const InfoBlock = ({ number, title, description }) => (
   <div className={styles.InfoBlocks}>

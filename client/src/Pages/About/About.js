@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "../../Components/Footer/Footer";
-import styles from "./About.module.css";  // Import your CSS module
-import img1 from "../../Assets/About/main-top.svg";
-import img2 from "../../Assets/About/2-photo.svg";
-import img3 from "../../Assets/About/carousel.svg";
-import img4 from "../../Assets/About/chel.svg";
-import img5 from "../../Assets/About/video-preview.svg";
+import styles from "./About.module.css"; 
+import img1 from "../../Assets/About/main-top.jpg";
+import img2 from "../../Assets/About/2-photo.jpg";
+import img3 from "../../Assets/About/carousel.jpg";
+import img4 from "../../Assets/About/chel.jpg";
+import img5 from "../../Assets/About/video-preview.jpg";
 
 const About = () => {
   return (
